@@ -1,0 +1,14 @@
+# Ignore arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignore configurações específicas do VS Code (opcional)
+.vscode/
+
+# Ignore arquivos temporários
+*.log
+*.tmp
+
+# Ignore pastas de build ou dist (caso você use futuramente)
+dist/
+build/

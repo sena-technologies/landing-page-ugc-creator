@@ -1,0 +1,5 @@
+[user]
+	email = irsp2121@hmail.com
+	name = igorpaes21
+[core]
+	excludesFile = ~/.gitignore_global
