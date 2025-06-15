@@ -1,14 +1,20 @@
-# Ignore arquivos de sistema operacional
-.DS_Store
-Thumbs.db
+# Ignora a pasta node_modules, se existir
+node_modules/
 
-# Ignore configurações específicas do VS Code (opcional)
-.vscode/
-
-# Ignore arquivos temporários
+# Ignora arquivos temporários
 *.log
 *.tmp
 
-# Ignore pastas de build ou dist (caso você use futuramente)
-dist/
-build/
+# Ignora diretórios do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignora o diretório .vscode, se não quiser versionar
+.vscode/
+
+# Ignora todos os arquivos exceto os do projeto
+*.exe
+*.dll
+*.zip
+*.tar
+*.rar
