@@ -1,23 +1,145 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
+    <div className="flex flex-col gap-20">
+      {/* Hero Section */}
+      <section className="relative bg-brand-beige/30 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Texto */}
+            <div className="text-center md:text-left">
+              <h1 className="mb-6 text-brand-brown-dark">
+                Criação de Conteúdo Autêntico para Marcas de Beleza
+              </h1>
+              <p className="text-lg mb-8 text-brand-brown-light">
+                Transforme sua marca em uma referência no mundo da beleza com conteúdo UGC profissional e autêntico.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-brown-medium hover:bg-brand-brown-dark transition-colors"
+                >
+                  Ver Portfólio
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-brand-brown-light rounded-md shadow-sm text-base font-medium text-brand-brown-medium hover:bg-brand-brown-light/10 transition-colors"
+                >
+                  Fazer Orçamento
+                </Link>
+              </div>
+            </div>
+            
+            {/* Imagem */}
+            <div className="relative h-[400px] md:h-[500px]">
+              <Image
+                src="/images/hero.jpg"
+                alt="UGC Creator em ação"
+                fill
+                className="object-cover rounded-lg shadow-xl"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Serviços */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="mb-4 text-brand-brown-dark">Serviços</h2>
+            <p className="text-lg text-brand-brown-light max-w-2xl mx-auto">
+              Conteúdo personalizado e profissional para sua marca de beleza se destacar nas redes sociais.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="bg-white p-6 rounded-lg shadow-lg border border-brand-beige hover:border-brand-pink transition-colors"
+              >
+                <h3 className="text-xl font-semibold mb-4 text-brand-brown-dark">{service.title}</h3>
+                <p className="text-brand-brown-light mb-4">{service.description}</p>
+                <Link
+                  href="/services"
+                  className="text-brand-brown-medium hover:text-brand-brown-dark transition-colors inline-flex items-center"
+                >
+                  Saiba mais
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sobre */}
+      <section className="bg-brand-beige/30 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Imagem */}
+            <div className="relative h-[400px]">
+              <Image
+                src="/images/about.jpg"
+                alt="Sobre a UGC Creator"
+                fill
+                className="object-cover rounded-lg shadow-xl"
+              />
+            </div>
+
+            {/* Texto */}
+            <div>
+              <h2 className="mb-6 text-brand-brown-dark">Sobre Mim</h2>
+              <p className="text-lg mb-6 text-brand-brown-light">
+                Sou uma criadora de conteúdo especializada no nicho de beleza, com mais de 5 anos de experiência em produção de conteúdo para redes sociais.
+              </p>
+              <p className="text-lg mb-8 text-brand-brown-light">
+                Trabalho com marcas de maquiagem, skincare e produtos capilares, criando conteúdo autêntico que conecta seu produto ao público-alvo.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-brown-medium hover:bg-brand-brown-dark transition-colors"
+              >
+                Entre em Contato
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+const services = [
+  {
+    title: "UGC para Maquiagem",
+    description: "Criação de conteúdo mostrando aplicação, swatches e resultados dos seus produtos de maquiagem."
+  },
+  {
+    title: "UGC para Skincare",
+    description: "Demonstração da aplicação e rotina com seus produtos skincare, destacando texturas e benefícios."
+  },
+  {
+    title: "UGC para Cabelo",
+    description: "Conteúdo focado em tutoriais de aplicação e resultados dos seus produtos capilares."
+  }
+]
             .
           </li>
           <li className="tracking-[-.01em]">
