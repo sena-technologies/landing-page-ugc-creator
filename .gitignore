@@ -39,3 +39,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# system files
+.cache/
+.docker/
+.eclipse/
+.gitconfig
+.gnupg/
+.lesshst
+.m2/
+.node_repl_history
+.p2/
+.rfb/
+.yarnrc
+.bash_history
+AppData/
+Documents/
+Downloads/
+*.xml
+index.html
